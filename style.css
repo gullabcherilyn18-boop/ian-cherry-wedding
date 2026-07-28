@@ -1,0 +1,368 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#F8F4E9;
+    overflow-x:hidden;
+    font-family:Georgia, serif;
+
+}
+
+/* INTRO */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("images/hero.png") center center/cover;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+    transition:opacity .7s ease;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(10,20,40,.45);
+
+    backdrop-filter:blur(3px);
+
+}
+
+.introContent{
+
+    position:relative;
+
+    text-align:center;
+
+    color:white;
+
+    padding:40px;
+
+}
+
+.welcome{
+
+    font-family:Poppins;
+
+    letter-spacing:2px;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+}
+
+.introContent h1{
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:70px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.introContent span{
+
+    color:#F4C430;
+
+}
+
+.inviteText{
+
+    font-family:Poppins;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+.date{
+
+    color:#F4C430;
+
+    font-size:22px;
+
+    margin-bottom:40px;
+
+}
+
+#enterBtn{
+
+    background:#F4C430;
+
+    color:#1F3A5F;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:18px 50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+#enterBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+.musicHint{
+
+    margin-top:25px;
+
+    font-family:Poppins;
+
+    font-size:14px;
+
+    opacity:.8;
+
+}
+
+
+section{
+
+    position:relative;
+    z-index:2;
+
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+section img{
+
+    width:100%;
+
+    max-width:1920px;
+
+    height:auto;
+
+    display:block;
+
+}
+
+.rsvpButton{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#1F3A5F;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-family:Poppins,sans-serif;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+    transition:.3s;
+
+    z-index:500;
+
+}
+
+.rsvpButton:hover{
+
+    background:#F4C430;
+
+    color:#1F3A5F;
+
+    transform:translateY(-3px);
+
+}
+/* ============================= */
+/* SCROLL ANIMATION */
+/* ============================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+#enterBtn{
+
+    animation:pulse 2s infinite;
+
+}
+
+/* ============================= */
+/* FLOATING SUNFLOWERS */
+/* ============================= */
+
+.floating-flowers{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.floating-flowers span{
+    position:absolute;
+    font-size:30px;
+    opacity:.18;
+    animation:floatFlower linear infinite;
+}
+
+/* Individual positions and speeds */
+
+.floating-flowers span:nth-child(1){
+    left:8%;
+    animation-duration:18s;
+    animation-delay:0s;
+}
+
+.floating-flowers span:nth-child(2){
+    left:25%;
+    font-size:22px;
+    animation-duration:22s;
+    animation-delay:3s;
+}
+
+.floating-flowers span:nth-child(3){
+    left:45%;
+    font-size:35px;
+    animation-duration:20s;
+    animation-delay:6s;
+}
+
+.floating-flowers span:nth-child(4){
+    left:65%;
+    font-size:24px;
+    animation-duration:24s;
+    animation-delay:1s;
+}
+
+.floating-flowers span:nth-child(5){
+    left:82%;
+    font-size:28px;
+    animation-duration:19s;
+    animation-delay:4s;
+}
+
+.floating-flowers span:nth-child(6){
+    left:92%;
+    font-size:20px;
+    animation-duration:26s;
+    animation-delay:8s;
+}
+
+@keyframes floatFlower{
+
+    from{
+        transform:translateY(110vh) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .introContent {
+        padding: 20px;
+    }
+
+    .introContent h1 {
+        font-size: 48px;
+    }
+
+    .welcome,
+    .inviteText,
+    .musicHint {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 20px;
+    }
+
+    #enterBtn {
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+
+    .rsvpButton {
+        right: 15px;
+        bottom: 15px;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+}
